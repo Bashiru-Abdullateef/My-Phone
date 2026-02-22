@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone Clock</title>
+
+    <!-- iPhone-style digital font -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container" onclick="move()">
+
+        <div class="innerTime">
+            <span id="hr">00</span>
+            <span>:</span>
+            <span id="min">00</span>
+            <span>:</span>
+            <span id="sec">00</span>
+            <sup id="period"></sup>
+        </div>
+         
+        <div id="showDate">Loading Date...</div>
+       
+    </div>
+    
+    <script>
+        function move() {
+            location = "Lackground/index.html";
+        }
+
+        // Update Clock Every Second
+        setInterval(() => {
+            let currentTime = new Date();
+
+            let hours = currentTime.getHours();
+            let ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+
+            document.getElementById("hr").innerText = (hours < 10 ? "0" : '') + hours;
+            document.getElementById("min").innerText = (currentTime.getMinutes() < 10 ? "0" : '') + currentTime.getMinutes();
+            document.getElementById("sec").innerText = (currentTime.getSeconds() < 10 ? "0" : '') + currentTime.getSeconds();
+            document.getElementById("period").innerText = ampm;
+        }, 1000);
+
+        // Show Date
+        let showDate = document.getElementById("showDate");
+        let date  = new Date();
+        showDate.innerText = date.toLocaleString('default', {
+            weekday: "long",
+            day: "numeric",
+            month: "2-digit",
+            year: "2-digit"
+        });
+    </script>
+</body>
+</html>

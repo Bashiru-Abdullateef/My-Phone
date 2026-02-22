@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My File Dashboard</title>
+
+    <!-- Font Awesome for folder icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1 class="title">My Files</h1>
+
+        <div class="folders">
+            <div class="folder">
+                <i class="fa-solid fa-folder-open folder-icon" style="color:#f7d84b;"></i>
+                <span>Files</span>
+            </div>
+
+            <div class="folder" onclick="Videos()">
+                <i class="fa-solid fa-video folder-icon" style="color:#4cafdf;"></i>
+                <span>Videos</span>
+            </div>
+
+            <div class="folder">
+                <i class="fa-solid fa-music folder-icon" style="color:#ff6b6b;"></i>
+                <span>Music</span>
+            </div>
+
+            <div class="folder" onclick="Pictures()">
+                <i class="fa-solid fa-image folder-icon" style="color:#34eb83;"></i>
+                <span>Pictures</span>
+            </div>
+
+            <div class="folder">
+                <i class="fa-solid fa-gamepad folder-icon" style="color:#9b59b6;"></i>
+                <span>Games</span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+<script>
+    function Pictures() {
+        location = "./images/index.html"
+        // window.location.href = "./ShowData/index.html";
+    }
+    function Videos() {
+        location = "./Videos/index.html"
+        // window.location.href = "./ShowData/index.html";
+    }
+</script>

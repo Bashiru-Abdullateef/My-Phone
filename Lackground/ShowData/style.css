@@ -1,0 +1,71 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #667eea, #764ba2);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    text-align: center;
+    color: white;
+}
+
+.title {
+    font-size: 36px;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.folders {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 30px;
+}
+
+.folder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.05);
+}
+
+.folder:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.1);
+}
+
+.folder-icon {
+    font-size: 50px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.folder:hover .folder-icon {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.folder span {
+    font-size: 16px;
+    margin-top: 5px;
+    color: #fff;
+    font-weight: 600;
+}
