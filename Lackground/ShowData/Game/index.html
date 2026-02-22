@@ -3,171 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./index.css">
+    <title>Responsive Keyboard Game</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <nav>
-
-        <table>
-            <input type="text" name="" id="put" oninput="seeee()">
-            <tr>
-                <td style="background-color: rgb(217,70,13);">⚪</td>
-                <td onclick="see(1)" ><sup onclick="see('!')">!</sup>1</td>
-                <td onclick="see(2)" ><sup onclick="see('@')">@</sup>2</td>
-                <td  onclick="see(3)"> <sup onclick="see('#')">#</sup>3</td>
-                <td onclick="see(4)" ><sup onclick="see('$')">$</sup>4</td>
-                <td onclick="see(5)" ><sup onclick="see('%')">%</sup>5</td>
-                <td onclick="see(6)"><sup onclick="see('^')">^</sup>6</td>
-                <td onclick="see('7')"><sup onclick="see('&')">&</sup>7</td>
-                <td onclick="see(8)"><sup onclick="see('7')">*</sup>8</td>
-                <td onclick="see(9)"><sup onclick="see('()')">(</sup>9</td>
-                <td onclick="see(0)"><sup onclick="see('()')">)</sup>0</td>
-                <td onclick="see('-')"><sup onclick="see('_')">_</sup><sub>-</sub></td>
-                <td onclick="see('+')"><sup onclick="seee()">+</sup>=</td>
-                <td  onclick="back()" style="background-color: rgb(103,110,113); color: white;">backspace</td>
-                
-            </tr>
-            <tr style="margin-top: 900px;">
-                <td style="background-color: rgb(160,130,126); color: black;">⇄</td>
-                <td onclick="see('q')" class="firt" id="Q">Q</td>
-                <td onclick="see('w')" class="firt" id="W">W</td>
-                <td onclick="see('e')" class="firt" id="E">E</td>
-                <td onclick="see('r')" class="firt" id="R">R</td>
-                <td onclick="see('t')" class="firt" id="T">T</td>
-                <td onclick="see('y')" class="firt" id="Y">Y</td>
-                <td onclick="see('u')" class="firt" id="U">U</td>
-                <td onclick="see('i')" class="firt" id="I">I</td>
-                <td onclick="see('o')" class="firt" id="O">O</td>
-                <td onclick="see('0')" class="firt" id="P">P</td>
-                <td><sup>{</sup>[</td>
-                <td><sup>}</sup>]</td>
-                <td  style="background-color:rgb(176,160,153); color: white;"  ><sub>|</sub>\</td>
-            </tr>
-            <tr style="margin-top: 900px;">
-                <td  onclick="toLower()" style="background-color: rgb(78,85,93); color: white;">caps <br> lock</td>
-                <td onclick="see('a')" class="firt" id="A">A</td>
-                <td onclick="see('s')" class="firt" id="S">S</td>
-                <td onclick="see('d')" class="firt" id="D">D</td>
-                <td onclick="see('f')" class="firt" id="F">F</td>
-                <td onclick="see('g')" class="firt" id="G">G</td>
-                <td onclick="see('h')" class="firt" id="H">H</td>
-                <td onclick="see('j')" class="firt" id="J">J</td>
-                <td onclick="see('k')" class="firt" id="K">K</td>
-                <td onclick="see('l')" class="firt" id="L">L</td>
-                <td><sup>:</sup> <sub>:</sub></td>
-                <td><sup>"</sup><sub><sub>'</sub></sub></td>
-                <td colspan="2" style="background-color: rgb(245,151,93); color: white;"><sup>enter</sup>🔚</td>
-                <!-- <td  style="background-color:rgb(176,160,153); color: white;"  ><sub>|</sub>\</td> -->
-            </tr>
-            <tr style="margin-top: 900px;">
-                <td onclick="toUpper()" style="background-color:rgb(176,160,153);">shit⬆</td>
-                <td onclick="see('z')" class="firt" id="Z">Z</td>
-                <td onclick="see('x')" class="firt" id="X">X</td>
-                <td onclick="see('c')" class="firt" id="C">C</td>
-                <td onclick="see('v')" class="firt" id="V">V</td>
-                <td onclick="see('b')" class="firt" id="B">B</td>
-                <td onclick="see('n')" class="firt" id="N">N</td>
-                <td onclick="see('m')" class="firt" id="M">M</td>
-                <td><sup>< </sup><sub>,</sub></td>
-                <td><sup>></sup> <sub>.</sub></td>
-                <td><sup>?</sup><sub>/</sub></td>
-                <td>🔝</td>
-                <td style="background-color: rgb(245,151,93);"  >⬆️</td>
-                <td  style="background-color:rgb(176,160,153); color: white;"  >end</td>
-            </tr>
-            <tr style="margin-top: 900px;">
-                <td style="background-color:rgb(144,129,122); color: white;">ctrl</td>
-                <td style="background-color:rgb(144,129,122); color: white;" >fn</td>
-                <td style="background-color:rgb(144,129,122); color: white;">Alt</td>
-                <td colspan="6" onclick="space()">space</td>
-                <!-- <td>V</td>
-                <td>B</td>
-                <td>N</td>
-                <td>M</td>
-                <td><sup>< </sup><sub>,</sub></td> -->
-                <td>Alt</td>
-                <td>fn</td>
-                <td style="background-color: rgb(245,151,93);"  >➡️    </td>
-                <td style="background-color: rgb(245,151,93); color: white;">⬇️</td>
-                <td  style="background-color: rgb(245,151,93); color: white;"   >⬅️</td>
-            </tr>
-    
-        </table>
+        <div class="keyboard-wrapper">
+            <table>
+                <tr>
+                    <td style="background-color: rgb(217,70,13);">⚪</td>
+                    <td onclick="see(1)"><sup onclick="see('!')">!</sup>1</td>
+                    <td onclick="see(2)"><sup onclick="see('@')">@</sup>2</td>
+                    <td onclick="see(3)"><sup onclick="see('#')">#</sup>3</td>
+                    <td onclick="see(4)"><sup onclick="see('$')">$</sup>4</td>
+                    <td onclick="see(5)"><sup onclick="see('%')">%</sup>5</td>
+                    <td onclick="see(6)"><sup onclick="see('^')">^</sup>6</td>
+                    <td onclick="see(7)"><sup onclick="see('&')">&</sup>7</td>
+                    <td onclick="see(8)"><sup onclick="see('*')">*</sup>8</td>
+                    <td onclick="see(9)"><sup onclick="see('(')">(</sup>9</td>
+                    <td onclick="see(0)"><sup onclick="see(')')">)</sup>0</td>
+                    <td onclick="see('-')"><sup onclick="see('_')">_</sup>-</td>
+                    <td onclick="see('+')"><sup onclick="see('+')">+</sup>=</td>
+                    <td onclick="back()" style="background-color: rgb(103,110,113); color: white;">backspace</td>
+                </tr>
+                <tr>
+                    <td style="background-color: rgb(160,130,126); color: black;">⇄</td>
+                    <td onclick="see('q')">Q</td>
+                    <td onclick="see('w')">W</td>
+                    <td onclick="see('e')">E</td>
+                    <td onclick="see('r')">R</td>
+                    <td onclick="see('t')">T</td>
+                    <td onclick="see('y')">Y</td>
+                    <td onclick="see('u')">U</td>
+                    <td onclick="see('i')">I</td>
+                    <td onclick="see('o')">O</td>
+                    <td onclick="see('p')">P</td>
+                    <td><sup>{</sup>[</td>
+                    <td><sup>}</sup>]</td>
+                    <td style="background-color:rgb(176,160,153); color: white;"><sub>|</sub>\</td>
+                </tr>
+                <tr>
+                    <td onclick="toLower()" style="background-color: rgb(78,85,93); color: white;">caps lock</td>
+                    <td onclick="see('a')">A</td>
+                    <td onclick="see('s')">S</td>
+                    <td onclick="see('d')">D</td>
+                    <td onclick="see('f')">F</td>
+                    <td onclick="see('g')">G</td>
+                    <td onclick="see('h')">H</td>
+                    <td onclick="see('j')">J</td>
+                    <td onclick="see('k')">K</td>
+                    <td onclick="see('l')">L</td>
+                    <td><sup>:</sup><sub>:</sub></td>
+                    <td><sup>"</sup><sub>'</sub></td>
+                    <td colspan="2" style="background-color: rgb(245,151,93); color: white;">enter 🔚</td>
+                </tr>
+                <tr>
+                    <td onclick="toUpper()" style="background-color:rgb(176,160,153);">shift ⬆</td>
+                    <td onclick="see('z')">Z</td>
+                    <td onclick="see('x')">X</td>
+                    <td onclick="see('c')">C</td>
+                    <td onclick="see('v')">V</td>
+                    <td onclick="see('b')">B</td>
+                    <td onclick="see('n')">N</td>
+                    <td onclick="see('m')">M</td>
+                    <td><sup><</sup><sub>,</sub></td>
+                    <td><sup>></sup><sub>.</sub></td>
+                    <td><sup>?</sup><sub>/</sub></td>
+                    <td>🔝</td>
+                    <td style="background-color: rgb(245,151,93);">⬆️</td>
+                    <td style="background-color:rgb(176,160,153); color: white;">end</td>
+                </tr>
+                <tr>
+                    <td style="background-color:rgb(144,129,122); color: white;">ctrl</td>
+                    <td style="background-color:rgb(144,129,122); color: white;">fn</td>
+                    <td style="background-color:rgb(144,129,122); color: white;">Alt</td>
+                    <td colspan="6" onclick="space()">space</td>
+                    <td>Alt</td>
+                    <td>fn</td>
+                    <td style="background-color: rgb(245,151,93);">➡️</td>
+                    <td style="background-color: rgb(245,151,93); color: white;">⬇️</td>
+                    <td style="background-color: rgb(245,151,93); color: white;">⬅️</td>
+                </tr>
+            </table>
+        </div>
+        <input type="text" id="put" oninput="seeee()">
     </nav>
-    <h1>
-        Let play a game
-    </h1>
-    <p>
-        Instruction enter the word below inside the input  I bet you will not be able to enter it
-    </p>
+
+    <h1>Let's play a game</h1>
+    <p>Instruction: enter the word below inside the input. I bet you will not be able to enter it</p>
     <ol>
-        <li>
-            I love you
-        </li>
-        <li>
-            Are you with me
-        </li>
-        <li>
-            What actually do you care of
-        </li>
-        <li>
-            Always put on something
-        </li>
-        <li>
-            Moving on is the only way
-        </li>
+        <li>I love you</li>
+        <li>Are you with me</li>
+        <li>What actually do you care of</li>
+        <li>Always put on something</li>
+        <li>Moving on is the only way</li>
     </ol>
 
+    <script>
+        var shiftOn = true;
+
+        function see(params) {
+            if (shiftOn) {
+                put.value += params.toUpperCase();
+                shiftOn = false;
+            } else {
+                put.value += params;
+            }
+        }
+
+        function toUpper() {
+            shiftOn = true;
+        }
+
+        function toLower() {
+            let letters = document.querySelectorAll('td');
+            letters.forEach(td => {
+                td.innerText = td.innerText.toLowerCase();
+            });
+        }
+
+        function seeee() {
+            put.value = put.value.replace('I love you', 'I hate you');
+            put.value = put.value.replace('Are you with me', 'Always with you');
+            put.value = put.value.replace('What actually do you care of', 'My education');
+            put.value = put.value.replace('Always put on something', 'Your smile');
+            put.value = put.value.replace('Moving on is the only way', 'You are correct');
+        }
+
+        setInterval(() => { seeee(); }, 1000);
+
+        function back() {
+            put.value = put.value.slice(0, -1);
+        }
+
+        function space() {
+            put.value += ' ';
+        }
+    </script>
 </body>
-<script>
-    var shiftOn = true
-    function see(params) {
-        if (put.value == '') {
-            shiftOn = true
-        }
-        if (shiftOn) {
-            put.value += params.toUpperCase()
-            shiftOn = false
-        } else {
-            put.value += params
-        }
-    }
-
-    function toUpper() {
-        shiftOn = true
-    }
-    function toLower() {
-        // put.value = put.value.toLowerCase()
-        let one= document.querySelectorAll('.firt');
-        for (let i = 0; i < one.length; i++){
-            document.getElementById(`${one[i].innerText}`).innerText = one[i].innerText.toLowerCase();
-            lowerCase = true
-             }
-
-
-    }
-
-    function seeee() {
-        
-        put.value = put.value.replace('I love you' , 'I hate you');
-        put.value = put.value.replace('Are you with me' , 'Always with you');
-        put.value = put.value.replace('What actually do you care of' , 'My education');
-        put.value = put.value.replace('Always put on something' , 'Your smile');
-        put.value = put.value.replace('Moving on is the only way' , ' You are correct ');
-
-
-    }
-    setInterval(() => {
-            seeee();
-             
-         }, 1000);
-    function back() {
-        put.value = put.value.slice(0 , -1)
-    }
-   function space(){ 
-        put.value  += ' '
-   }
-   
-</script>
 </html>

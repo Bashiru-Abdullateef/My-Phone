@@ -1,0 +1,124 @@
+     /* ======================
+           RESET
+        ======================= */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+        }
+
+        /* ======================
+           BODY
+        ======================= */
+        body{
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1d2671, #c33764);
+            padding: 16px;
+            overflow-x: hidden;
+        }
+
+        /* ======================
+           INPUT
+        ======================= */
+        input#put{
+            width: 95%;
+            max-width: 600px;
+            min-height: 48px;
+            display: block;
+            margin: 0 auto 12px auto;
+            padding: 0 12px;
+            font-size: 18px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #ff512f, #dd2476);
+            color: #fff;
+            outline: none;
+        }
+
+        /* ======================
+           KEYBOARD WRAPPER
+        ======================= */
+        .keyboard-wrapper{
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 20px;
+        }
+
+        /* ======================
+           TABLE
+        ======================= */
+        table{
+            width: 100%;
+            max-width: 900px;
+            border-collapse: separate;
+            border-spacing: 6px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+        }
+
+        table tr td{
+            text-align: center;
+            font-size: 16px;
+            padding: 12px;
+            border-radius: 8px;
+            background: #f2f2f2;
+            color: #d9460d;
+            min-width: 40px;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        table tr td:hover{
+            transform: scale(1.05);
+            background: #ff7a18;
+            color: #fff;
+        }
+
+        /* ======================
+           TEXT BELOW
+        ======================= */
+        h1{
+            text-align: center;
+            margin: 16px 0;
+            font-size: 24px;
+            color: #ffb347;
+        }
+
+        p, ol li{
+            font-size: 16px;
+            color: #f1f1f1;
+            line-height: 1.5;
+        }
+
+        /* ======================
+           MEDIA QUERIES
+        ======================= */
+        @media (max-width: 600px){
+            input#put{
+                font-size: 16px;
+            }
+            table tr td{
+                font-size: 14px;
+                padding: 8px;
+                min-width: 32px;
+            }
+        }
+
+        @media (max-width: 400px){
+            h1{
+                font-size: 20px;
+            }
+            input#put{
+                min-height: 40px;
+            }
+            table tr td{
+                font-size: 12px;
+                padding: 6px;
+                min-width: 28px;
+            }
+        }
