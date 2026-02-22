@@ -1,122 +1,206 @@
+/* ==========================
+   RESET & BASE
+========================== */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, sans-serif;
 }
-.board {
-    display: grid;
-    grid-template-columns: 100px 100px 100px;
-    grid-template-rows: 100px 100px 100px;
-    cursor: pointer;
-    /* margin-top: 40px; */
-    position: relative;
-}
+
 body{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: black;
-    /* padding-top: 40px; */
+    background: radial-gradient(circle at center, #0f0c29, #302b63, #24243e);
+    min-height: 100vh;
 }
+
+/* ==========================
+   TITLE
+========================== */
 h1{
-    color: greenyellow;
+    color: #00ff99;
+    font-size: 3em;
+    text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99, 0 0 30px #00ff99;
+    margin-bottom: 20px;
+    text-align: center;
 }
+
+/* ==========================
+   BOARD
+========================== */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    width: 90vw;
+    max-width: 450px;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    position: relative;
+}
+
+/* ==========================
+   TILE
+========================== */
 .title{
-    color: yellowgreen;
-    /* margin: 10px; */
-    /* background-color: grey; */
-    font-size: 2em;
+    color: #00ff99;
+    font-size: 8vw; /* scales on mobile */
     display: flex;
     justify-content: center;
     align-items: center;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00ff99 inset, 0 0 20px #00ff99;
+    transition: all 0.3s ease;
+    user-select: none;
 }
+
+.title:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00ff99 inset, 0 0 40px #00ff99;
+}
+
+/* GRID LINES */
 .right{
-    border-right: 0.2em solid indigo;
+    border-right: 0.3em solid #6a0dad;
 }
 .bottom{
-    border-bottom: 0.2em solid indigo;
-    
+    border-bottom: 0.3em solid #6a0dad;
 }
+
+/* STRIKE LINES */
 .strick{
     position: absolute;
-    background-color: darkred;
+    background-color: #ff0055;
+    transition: all 0.5s ease;
+    border-radius: 2px;
 }
-.strick-row-1{
+
+.strick-row-1, .strick-row-2, .strick-row-3{
     width: 100%;
-    height: 4px;
-    top: 16%;
+    height: 5px;
 }
-.strick-column-1{
+
+.strick-column-1, .strick-column-2, .strick-column-3{
+    width: 5px;
     height: 100%;
-    width: 4px;
-    left: 15%;
 }
-.strick-row-2{
-    width: 100%;
-    height: 4px;
-    top: 49%;
-}
-.strick-column-2{
-    height: 100%;
-    width: 4px;
-    left: 48%;
-}
-.strick-row-3{
-    width: 100%;
-    height: 4px;
-    top: 84%;
-}
-.strick-column-3{
-    height: 100%;
-    width: 4px;
-    left: 83%;
-}
-.strick-diagonal-1{
+
+.strick-diagonal-1, .strick-diagonal-2{
     width: 90%;
-    height: 4px;
-    top: 51%;
+    height: 5px;
+    top: 50%;
     left: 5%;
-    transform: skewY(45deg);
+}
+
+.strick-diagonal-1{
+    transform: rotate(45deg);
 }
 .strick-diagonal-2{
-    width: 90%;
-    height: 4px;
-    top: 51%;
-    left: 5%;
-    transform: skewY(-45deg);
+    transform: rotate(-45deg);
 }
+
+/* ==========================
+   GAME OVER
+========================== */
 #game-over{
     text-align: center;
-    border: indigo 8px solid;
-    padding: 40px;
-    /* margin-top: 50px; */
+    border: 5px solid #00ff99;
+    padding: 30px;
+    margin-top: 20px;
+    background: rgba(0,0,0,0.8);
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00ff99;
+    animation: pop 0.3s ease forwards;
 }
+
+@keyframes pop{
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
 h2{
-    color: greenyellow;
-    font-size: 3em;
-    margin-top: 0px;
+    color: #00ff99;
+    font-size: 2.5em;
+    text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
+    margin-top: 0;
 }
+
 button{
     background-color: transparent;
-    color: greenyellow;
-    border: greenyellow 1px solid;
-    padding: 10px;
+    color: #00ff99;
+    border: 2px solid #00ff99;
+    padding: 10px 20px;
     font-size: 1.5em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
+button:hover{
+    background: #00ff99;
+    color: #000;
+    box-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99 inset;
 }
-.hidden{
-    display: none;
-}
-.visible{
-    display: block;
-}
+
+/* ==========================
+   HOVER FOR X AND O
+========================== */
 .x-hover:hover::after{
     content: "X";
     opacity: 0.4;
+    color: #ff0055;
+    text-shadow: 0 0 10px #ff0055, 0 0 20px #ff0055;
+    font-size: 8vw;
 }
 .o-hover:hover::after{
     content: "O";
     opacity: 0.4;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    font-size: 8vw;
+}
 
+/* ==========================
+   MEDIA QUERIES (RESPONSIVE)
+========================== */
+
+/* Large Phones ≥ 480px */
+@media (min-width: 480px){
+    .title {
+        font-size: 6vw;
+    }
+    .x-hover::after, .o-hover::after {
+        font-size: 6vw;
+    }
+}
+
+/* Tablets ≥ 768px */
+@media (min-width: 768px){
+    .board {
+        max-width: 600px;
+    }
+    .title {
+        font-size: 5vw;
+    }
+    .x-hover::after, .o-hover::after {
+        font-size: 5vw;
+    }
+}
+
+/* Desktops ≥ 1024px */
+@media (min-width: 1024px){
+    .board {
+        max-width: 700px;
+    }
+    .title {
+        font-size: 4vw;
+    }
+    .x-hover::after, .o-hover::after {
+        font-size: 4vw;
+    }
 }
