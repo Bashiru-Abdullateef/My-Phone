@@ -1,0 +1,43 @@
+     body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            background: linear-gradient(135deg, #1d2671, #c33764);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .player {
+            background: rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .player h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .track {
+            margin-bottom: 15px;
+        }
+
+        .track p {
+            margin: 0 0 6px;
+            font-size: 14px;
+            opacity: 0.85;
+        }
+
+        audio {
+            width: 100%;
+            outline: none;
+            border-radius: 6px;
+        }

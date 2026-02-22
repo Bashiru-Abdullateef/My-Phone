@@ -30,7 +30,7 @@
                 <span>Videos</span>
             </div>
 
-            <div class="folder">
+            <div class="folder" onclick="Audios()">
                 <i class="fa-solid fa-music folder-icon" style="color:#ff6b6b;"></i>
                 <span>Music</span>
             </div>
@@ -58,6 +58,10 @@
     }
     function Videos() {
         location = "./Videos/index.html"
+        // window.location.href = "./ShowData/index.html";
+    }
+    function Audios() {
+        location = "./Audio/index.html"
         // window.location.href = "./ShowData/index.html";
     }
 </script>
