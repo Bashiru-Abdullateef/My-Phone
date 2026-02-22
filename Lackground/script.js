@@ -37,7 +37,7 @@ function submitPassword() {
 
     if (inputValue === realPassword) {
         console.log("Password correct, redirecting...");
-        alert("Successful");
+        // alert("Successful");
         window.location.href = "./ShowData/index.html"; // <-- Redirect works here
     } else {
         attempts++;
@@ -77,7 +77,7 @@ function copyPassword() {
 
     navigator.clipboard.writeText(password)
         .then(() => {
-            alert("Password copied!");
+            // alert("Password copied!");
         })
         .catch(() => {
             alert("Failed to copy password.");
